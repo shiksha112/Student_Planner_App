@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <style>
+        
+        header{
+        display: flex;
+        align-items: center;
+        gap: 15px;          /* Space between menu icon and text */
+        padding: 15px;
+    }
+
+    .menu svg{
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    .header-content h3{
+        margin: 0;
+    }
+
+    .header-content p{
+        margin: 4px 0 0;
+        color: rgb(14, 118, 203);
+    }
+    html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #f0f4f8;
+    }
+    .content {
+    flex: 1;                /* takes remaining space */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+    }
+
+    .pro {
+        font-weight: 40px;
+        font-style: sans serif;
+        Margin-left: 20px;
+        margin: 10px;
+        padding: 10px;
+        background-color: rgb(0, 191, 255);
+        padding-left: 50px;
+        margin-right: 1000px;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <!-- <a href="sidebar.html"> -->
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+                    <!-- </a> -->
+                </div>
+        </nav>
+        
+        <div class="header-content">
+            <h3>Hello, Shiksha!</h3>
+            <!-- Motivational Quote -->
+             <p>Consistency is the key of <i>success!</i></p>
+        </div>
+        
+    </header>
+    <div class="content"></div>
+        <main>
+            <div id="main" class="pro">
+                <p><b>Total Task: </b><i>10</i></p>
+                <p><b>Completed Task: </b><i>6</i></p>
+                <p><b>Pending Task: </b><i>4</i></p>
+            </div>
+        
+        </main>
+        <footer>
+            <div id="footer" class="pro">
+                <p><b>Streak: </b><i>5 days</i></p>
+                <p><b>Progress: </b><i>65%</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
