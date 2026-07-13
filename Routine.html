@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Routine</title>
+    <style>
+        * {
+            font-style: Georgia;
+            color: navy;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(243, 249, 253);
+        }
+        .routine-header {
+            color: navy;
+            font-style: sans serif;
+            font-size: 20px;
+        }
+        .top-section{
+            margin: 50px;
+            height: 50px;
+            width: 250px;
+            border: 2px solid rgb(15, 163, 249);
+            padding: 0px 0px 10px 5px;
+            box-shadow: 2px 5px 15px rgba(0, 0, 255, 0.752);
+            border-radius: 8px 
+        }
+        .add-task{
+            height: 200px;
+            width: 400px;
+            margin: 50px;
+            
+        }
+        .new-task{
+            padding:  30px 30px 0px 0px;
+        }
+        button{
+            background-color: #fce665;
+            padding: 3px 20px 3px 20px;
+            border: 2px solid #fce665;
+            border-radius: 10px;
+        }
+        button:hover{
+            box-shadow: 2px 5px 10px #FFDB58;
+            
+        }
+        #add-btn{
+            color: navy;
+            font-size: 15px;
+        }
+        .progress-tracker{
+            margin: 70px 50px 70px 50px;
+            
+            
+        }
+        h3{
+            margin-bottom: 30px;
+            padding-left: 3px;
+        }
+        .outer{
+            margin: 20px;
+            height: 600px;
+            width: 500px;
+            border: 2px dashed purple;
+            box-shadow: 2px 5px 15px purple;
+            
+        }
+        .task-added:checked + label {
+            font-size: 18px;
+        }
+        .new-task {
+            height: 15px;
+            width: 200px;
+            margin-top: 10px;
+            padding-bottom: 10px;
+            border: 2px double rgb(255, 0, 255);
+            border-radius: 10px;
+            box-shadow: 2px 5px 15px pink;
+
+        }
+
+        #tracker{
+            height: 100px;
+            width: 200px;
+            border: 2px double rgb(3, 95, 63);
+            border-radius: 10px;
+            box-shadow: 2px 5px 15px rgb(5, 244, 188);
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="outer">
+    <header class="routine-header">
+        <div class="top-section">
+            <h2><span class="diamond">&diams;</span> Today's Routine</h2>
+        </div>
+    </header>
+    <main>
+        <!-- Add new task -->
+        <section class="add-task"> 
+            <button id="add-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                <label for="add-btn">Add New Task</label>
+            </button>
+            <!-- before adding js after js remove it -->
+            <div class="new-task">
+                <input type="checkbox" class="task-added">
+                <label>Wake Up - 6:00 AM</label>
+            </div>
+            <div class="new-task">
+                <input type="checkbox" class="task-added">
+                <label>Study - 11:00 AM</label>
+            </div>
+            <div class="new-task">
+                <input type="checkbox" class="task-added">
+                <label>sleep - 10:00 PM</label>
+            </div>
+        </section>
+        
+    </main>
+    <footer class="progress-tracker">
+        <div id="tracker">
+        <h3>Completed : 0/0 tasks</h3>
+        <h3>Progress :0%</h3>
+        </div>
+    </footer>
+    </div>
+</body>
+</html>
