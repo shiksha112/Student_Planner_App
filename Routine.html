@@ -5,91 +5,174 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Routine</title>
     <style>
-        * {
-            font-style: Georgia;
-            color: navy;
-        }
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: rgb(243, 249, 253);
-        }
-        .routine-header {
-            color: navy;
-            font-style: sans serif;
-            font-size: 20px;
-        }
-        .top-section{
-            margin: 50px;
-            height: 50px;
-            width: 250px;
-            border: 2px solid rgb(15, 163, 249);
-            padding: 0px 0px 10px 5px;
-            box-shadow: 2px 5px 15px rgba(0, 0, 255, 0.752);
-            border-radius: 8px 
-        }
-        .add-task{
-            height: 200px;
-            width: 400px;
-            margin: 50px;
-            
-        }
-        .new-task{
-            padding:  30px 30px 0px 0px;
-        }
-        button{
-            background-color: #fce665;
-            padding: 3px 20px 3px 20px;
-            border: 2px solid #fce665;
-            border-radius: 10px;
-        }
-        button:hover{
-            box-shadow: 2px 5px 10px #FFDB58;
-            
-        }
-        #add-btn{
-            color: navy;
-            font-size: 15px;
-        }
-        .progress-tracker{
-            margin: 70px 50px 70px 50px;
-            
-            
-        }
-        h3{
-            margin-bottom: 30px;
-            padding-left: 3px;
-        }
+       *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Georgia, serif;
+        color: navy;
+    }
+
+    body{
+        background-color: rgb(243,249,253);
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    /* Main Container */
+    .outer{
+        width: 95%;
+        max-width: 550px;
+        min-height: 90vh;
+    
+        border: 2px dashed purple;
+        border-radius: 12px;
+        box-shadow: 2px 5px 15px purple;
+
+        padding: 25px;
+        background: white;
+    }
+
+    /* Header */
+    .routine-header{
+        margin-bottom: 30px;
+    }
+
+    .top-section{
+        width: 100%;
+        border: 2px solid rgb(15,163,249);
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 2px 5px 15px rgba(0,0,255,0.4);
+    }
+
+    .top-section h2{
+        font-size: 1.5rem;
+    }
+
+    /* Main */
+    .add-task{
+        width: 100%;
+    }
+
+    button{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        background: #fce665;
+        border: none;
+        border-radius: 10px;
+
+        padding: 10px 18px;
+        cursor: pointer;
+
+        font-size: 1rem;
+    }
+
+    button:hover{
+        box-shadow: 2px 5px 10px #f4f806cc;
+    }
+
+    #add-btn{
+        color: navy;
+    }
+
+    /* Task Card */
+    .new-task{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        margin-top: 20px;
+        padding: 15px;
+
+        border: 2px double magenta;
+        border-radius: 10px;
+        box-shadow: 2px 5px 15px pink;
+    }
+
+    .task-added{
+        width: 18px;
+        height: 18px;
+    }
+
+    .task-added:checked + label{
+        text-decoration: line-through;
+        font-weight: bold;
+        color: gray;
+    }
+
+    .new-task label{
+        font-size: 1rem;
+    }
+
+    /* Footer */
+    .progress-tracker{
+        margin-top: 40px;
+    }
+
+    #tracker{
+        width: 100%;
+
+         border: 2px double rgb(3,95,63);
+        border-radius: 10px;
+        box-shadow: 2px 5px 15px rgb(5,244,188);
+
+        padding: 20px;
+    }
+
+    #tracker h3{
+        margin-bottom: 15px;
+    }
+
+    /* ---------- Responsive ---------- */
+
+    @media (max-width:768px){
+
         .outer{
-            margin: 20px;
-            height: 600px;
-            width: 500px;
-            border: 2px dashed purple;
-            box-shadow: 2px 5px 15px purple;
-            
-        }
-        .task-added:checked + label {
-            font-size: 18px;
-        }
-        .new-task {
-            height: 15px;
-            width: 200px;
-            margin-top: 10px;
-            padding-bottom: 10px;
-            border: 2px double rgb(255, 0, 255);
-            border-radius: 10px;
-            box-shadow: 2px 5px 15px pink;
-
+            width: 100%;
+            padding: 20px;
         }
 
-        #tracker{
-            height: 100px;
-            width: 200px;
-            border: 2px double rgb(3, 95, 63);
-            border-radius: 10px;
-            box-shadow: 2px 5px 15px rgb(5, 244, 188);
+        .top-section h2{
+            font-size: 1.3rem;
         }
 
+        button{
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    @media (max-width:480px){
+
+        .outer{
+            padding: 15px;
+        }
+
+        .top-section h2{
+            font-size: 1.1rem;
+        }
+
+        .new-task{
+            padding: 12px;
+        }
+
+        .new-task label{
+            font-size: 0.9rem;
+        }
+
+        button{
+            font-size: 0.9rem;
+        }
+
+        #tracker h3{
+            font-size: 0.95rem;
+        }
+    }
         
     </style>
 </head>
