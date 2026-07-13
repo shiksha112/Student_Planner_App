@@ -1,0 +1,421 @@
+/* =========================
+   AURORA PLANNER DESIGN SYSTEM
+========================= */
+
+
+:root {
+
+    --background: #F5F8FF;
+
+    --primary: #3366FF;
+
+    --secondary: #7B61FF;
+
+    --accent: #FFC857;
+
+    --success: #3DDC97;
+
+    --text: #243B53;
+
+    --card: #FFFFFF;
+
+    --border: #E2E8F0;
+
+    --shadow: 0 10px 25px rgba(36, 59, 83, 0.08);
+
+}
+
+
+
+
+/* =========================
+   GLOBAL RESET
+========================= */
+
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    font-family: "Poppins", sans-serif;
+
+}
+
+
+
+
+body {
+
+    min-height: 100vh;
+
+    background: var(--background);
+
+    color: var(--text);
+
+    display: flex;
+
+    justify-content: center;
+
+    padding: 30px;
+
+}
+
+
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+
+.daily-container {
+
+    width: 100%;
+
+    max-width: 600px;
+
+    background: transparent;
+
+}
+
+
+
+/* =========================
+   COMMON TEXT STYLE
+========================= */
+
+
+h1,
+h2,
+h3 {
+
+    color: var(--text);
+
+}
+
+
+p {
+
+    color: #64748B;
+
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.daily-header {
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    padding: 30px;
+
+    border-radius: 24px;
+
+    color: white;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.daily-header h1 {
+
+    color: white;
+
+    font-size: 2.2rem;
+
+    margin: 10px 0;
+
+}
+
+
+.date {
+
+    color: rgba(255,255,255,0.8);
+
+    font-size: 0.9rem;
+
+}
+
+
+.greeting {
+
+    color:white;
+
+    font-size:1.1rem;
+
+}
+
+
+/* Decorative circle */
+
+.daily-header::after {
+
+    content:"";
+
+    position:absolute;
+
+    width:160px;
+
+    height:160px;
+
+    background:var(--accent);
+
+    border-radius:50%;
+
+    right:-50px;
+
+    top:-50px;
+
+    opacity:0.7;
+
+}
+
+/* =========================
+   MOTIVATION CARD
+========================= */
+
+
+.motivation-card {
+
+    margin-top:25px;
+
+    background:var(--card);
+
+    padding:20px;
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow);
+
+    display:flex;
+
+    gap:15px;
+
+    align-items:center;
+
+}
+
+
+.motivation-card span {
+
+    font-size:2rem;
+
+}
+
+
+.motivation-card p {
+
+    font-size:0.95rem;
+
+}
+
+/* =========================
+   ADD TASK BUTTON
+========================= */
+
+
+.add-task-section {
+
+    margin:25px 0;
+
+}
+
+.add-task-btn {
+
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+
+    transition:0.3s ease;
+
+}
+
+.add-task-btn:hover {
+
+    transform:translateY(-4px);
+
+    background:var(--secondary);
+
+}
+
+.add-task-btn span {
+
+    font-size:1.5rem;
+
+}
+/* =========================
+   TASK CARD
+========================= */
+
+
+.task-section {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+.task-card {
+
+    background:var(--card);
+
+    padding:18px;
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+
+    transition:0.3s ease;
+
+}
+
+.task-card:hover {
+
+    transform:translateY(-3px);
+
+}
+
+.task-card input {
+
+    width:20px;
+
+    height:20px;
+
+    accent-color:var(--primary);
+
+}
+
+.task-details h3 {
+
+    font-size:1rem;
+
+    margin-bottom:5px;
+
+}
+
+.task-details p {
+
+    font-size:0.85rem;
+
+}
+/* =========================
+   GROWTH SECTION
+========================= */
+
+
+.growth-section {
+
+    margin-top:30px;
+
+    background:var(--card);
+
+    padding:20px;
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.growth-header {
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:15px;
+
+}
+
+.growth-header h2 {
+
+    font-size:1.2rem;
+
+}
+
+.progress-bar {
+
+    height:12px;
+
+    background:#E2E8F0;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill {
+
+    height:100%;
+
+    width:40%;
+
+    background:linear-gradient(
+        90deg,
+        var(--success),
+        var(--primary)
+    );
+
+    border-radius:20px;
+
+}
+
+.progress-text {
+
+    margin-top:10px;
+
+    text-align:right;
+
+    font-weight:600;
+
+}
