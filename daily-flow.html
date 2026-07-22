@@ -52,6 +52,8 @@
         </section>
 
 
+
+
         <!-- Add Task Section -->
 
         <section class="add-task-section">
@@ -69,13 +71,11 @@
 
         </section>
 
-
         <!-- Task List Section -->
 
         <section class="task-section" id="taskContainer">
 
         </section>
-
 
         <!-- Progress Section -->
 
@@ -90,8 +90,8 @@
                 </h2>
 
 
-                <p>
-                    2 / 5 Tasks Completed
+                <p id="taskStatus">
+                    0 / 0 Tasks Completed
                 </p>
 
 
@@ -101,25 +101,71 @@
 
             <div class="progress-bar">
 
-                <div class="progress-fill"></div>
+                <div class="progress-fill" id="progressFill"></div>
 
             </div>
 
 
-            <p class="progress-text">
-                40% Completed
+            <p class="progress-text" id="progressText">
+                0% Completed
             </p>
 
 
         </section>
 
+        <!-- Add Task Modal -->
 
+        <div class="modal-overlay" id="taskModal">
+
+            <div class="modal">
+
+                <h2>Add New Task</h2>
+
+                <div class="input-group">
+
+                    <label>Task Name</label>
+
+                    <input
+                        type="text"
+                        id="taskNameInput"
+                        placeholder="Enter task name"
+                    >
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Time</label>
+
+                    <input
+                        type="time"
+                        id="taskTimeInput"
+                    >
+
+                </div>
+
+                <div class="modal-buttons">
+
+                    <button class="cancel-btn" id="cancelBtn">
+                        Cancel
+                    </button>
+
+                    <button class="save-btn" id="saveTaskBtn">
+                        Add Task
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
 
 
     </div>
 
-
-
+    
 </body>
+
+<script src="daily-flow.js"></script>
 
 </html>
