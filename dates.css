@@ -1,0 +1,797 @@
+/* =========================
+   AURORA PLANNER DESIGN SYSTEM
+========================= */
+
+:root {
+
+    --background: #F5F8FF;
+
+    --primary: #3366FF;
+
+    --secondary: #7B61FF;
+
+    --accent: #FFC857;
+
+    --success: #3DDC97;
+
+    --text: #243B53;
+
+    --card: #FFFFFF;
+
+    --border: #E2E8F0;
+
+    --shadow: 0 10px 25px rgba(36, 59, 83, 0.08);
+
+}
+
+
+/* =========================
+   GLOBAL RESET
+========================= */
+
+
+* {
+
+    margin:0;
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:"Poppins", sans-serif;
+
+}
+
+body {
+
+    min-height:100vh;
+
+    background:var(--background);
+
+    color:var(--text);
+
+    display:flex;
+
+    justify-content:center;
+
+    padding:30px;
+
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+
+.dates-container {
+
+    width:100%;
+
+    max-width:600px;
+
+    animation:fadeUp 0.6s ease;
+
+}
+
+/* =========================
+   HEADER
+========================= */
+
+
+.dates-header {
+
+
+    background:var(--card);
+
+    padding:25px;
+
+    border-radius:24px;
+
+    box-shadow:var(--shadow);
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+
+    border-left:6px solid var(--primary);
+
+
+}
+
+
+.calendar-icon {
+
+
+    width:65px;
+
+    height:65px;
+
+
+    border-radius:20px;
+
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    font-size:2rem;
+
+
+}
+
+
+.header-content .month {
+
+
+    font-size:0.9rem;
+
+    color:#64748B;
+
+    margin-bottom:5px;
+
+}
+
+
+.header-content h1 {
+
+
+    font-size:2rem;
+
+    margin-bottom:5px;
+
+
+}
+
+
+.header-content p {
+
+
+    color:#64748B;
+
+    font-size:0.95rem;
+
+
+}
+/* =========================
+   NEXT DEADLINE CARD
+========================= */
+
+
+.deadline-card {
+
+
+    margin-top:25px;
+
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+
+    padding:20px;
+
+
+    border-radius:24px;
+
+
+    color:white;
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    align-items:center;
+
+
+    box-shadow:
+    0 15px 30px rgba(51,102,255,0.25);
+
+
+}
+
+.deadline-info p {
+
+
+    color:rgba(255,255,255,0.8);
+
+
+    font-size:0.9rem;
+
+
+    margin-bottom:8px;
+
+
+}
+
+.deadline-info h3 {
+
+
+    color:white;
+
+
+    font-size:1.4rem;
+
+
+    margin-bottom:5px;
+
+
+}
+
+.deadline-info span {
+
+
+    color:rgba(255,255,255,0.85);
+
+
+    font-size:0.9rem;
+
+
+}
+
+/* Countdown Circle */
+
+
+.countdown {
+
+
+    width:80px;
+
+    height:90px;
+
+
+    background:rgba(255,255,255,0.15);
+
+
+    border-radius:50%;
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    backdrop-filter:blur(5px);
+
+
+}
+
+.countdown h2 {
+
+
+    color:white;
+
+
+    font-size:2rem;
+
+
+    line-height:1;
+
+
+}
+
+.countdown p {
+
+
+    color:white;
+
+
+    font-size:0.75rem;
+
+
+}
+/* =========================
+   ADD DATE BUTTON
+========================= */
+
+
+.add-date-section {
+
+    margin-top:15px;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+}
+
+.add-date-btn {
+
+
+    padding:12px 22px;
+
+
+    border:none;
+
+
+    border-radius:14px;
+
+
+    background:var(--primary);
+
+
+    color:white;
+
+
+    font-size:0.95rem;
+
+
+    font-weight:600;
+
+
+    cursor:pointer;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:8px;
+
+
+    transition:0.3s ease;
+
+
+}
+
+.add-date-btn span {
+
+
+    font-size:1.3rem;
+
+
+}
+
+.add-date-btn:hover {
+
+
+    background:var(--secondary);
+
+
+    transform:translateY(-3px);
+
+
+    box-shadow:
+    0 10px 20px rgba(123,97,255,0.25);
+
+
+}
+
+.add-date-btn:active {
+
+
+    transform:scale(0.97);
+
+
+}
+/* =========================
+   DATE CARDS
+========================= */
+
+
+.dates-section {
+
+
+    margin-top:30px;
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    gap:18px;
+
+
+}
+
+.date-card {
+
+
+    background:var(--card);
+
+
+    border-radius:18px;
+
+
+    padding:18px;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:15px;
+
+
+    box-shadow:var(--shadow);
+
+
+    transition:0.3s ease;
+
+
+    overflow:hidden;
+
+
+}
+
+.date-card:hover {
+
+
+    transform:translateY(-5px);
+
+
+    box-shadow:
+    0 15px 30px rgba(36,59,83,0.12);
+
+
+}
+
+/* Priority Line */
+
+
+.priority-line {
+
+
+    width:6px;
+
+
+    height:65px;
+
+
+    border-radius:10px;
+
+
+}
+
+/* Priority Colors */
+
+
+.high .priority-line {
+
+
+    background:#FF5C5C;
+
+
+}
+
+.medium .priority-line {
+
+
+    background:var(--accent);
+
+
+}
+
+.low .priority-line {
+
+
+    background:var(--success);
+
+
+}
+
+/* Date Details */
+
+
+.date-details h3 {
+
+
+    font-size:1.05rem;
+
+
+    margin-bottom:6px;
+
+
+}
+
+.date-details p {
+
+
+    font-size:0.9rem;
+
+
+    color:#64748B;
+
+
+    margin-bottom:8px;
+
+
+}
+
+.date-details span {
+
+
+    display:inline-block;
+
+
+    padding:5px 12px;
+
+
+    border-radius:20px;
+
+
+    font-size:0.75rem;
+
+
+    font-weight:600;
+
+
+}
+
+/* Priority Labels */
+
+
+.high .date-details span {
+
+
+    background:#FFE5E5;
+
+
+    color:#E11D48;
+
+
+}
+
+.medium .date-details span {
+
+
+    background:#FFF4D6;
+
+
+    color:#B45309;
+
+
+}
+
+.low .date-details span {
+
+
+    background:#DCFCE7;
+
+
+    color:#15803D;
+
+
+}
+/* =========================
+   VIEW ALL BUTTON
+========================= */
+
+
+.view-all-btn {
+
+
+    width:100%;
+
+
+    margin-top:25px;
+
+
+    padding:14px;
+
+
+    border:none;
+
+
+    border-radius:16px;
+
+
+    background:transparent;
+
+
+    color:var(--primary);
+
+
+    border:2px solid var(--primary);
+
+
+    font-size:1rem;
+
+
+    font-weight:600;
+
+
+    cursor:pointer;
+
+
+    transition:0.3s ease;
+
+
+}
+
+
+
+
+.view-all-btn:hover {
+
+
+    background:var(--primary);
+
+
+    color:white;
+
+
+    transform:translateY(-3px);
+
+
+}
+
+/* =========================
+   PAGE ANIMATION
+========================= */
+
+
+@keyframes fadeUp {
+
+
+    from {
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+
+
+    to {
+
+
+        opacity:1;
+
+
+        transform:translateY(0);
+
+
+    }
+
+
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+
+@media(max-width:768px){
+
+    body {
+
+        padding:20px;
+
+    }
+
+    .dates-header {
+
+
+        padding:20px;
+
+    }
+
+
+    .header-content h1 {
+
+        font-size:1.6rem;
+
+    }
+
+    .deadline-card {
+
+        padding:20px;
+
+    }
+
+
+}
+
+@media(max-width:480px){
+
+    body {
+        padding:15px;
+
+    }
+
+    .dates-header {
+
+
+        flex-direction:column;
+
+
+        align-items:flex-start;
+
+
+    }
+
+    .calendar-icon {
+
+
+        width:55px;
+
+
+        height:55px;
+
+
+    }
+
+    .deadline-card {
+
+
+        flex-direction:column;
+
+
+        align-items:flex-start;
+
+
+        gap:20px;
+
+
+    }
+    .countdown {
+
+
+        width:80px;
+
+
+        height:80px;
+
+
+    }
+
+    .date-card {
+
+
+        padding:15px;
+
+
+    }
+
+    .add-date-section {
+
+
+        justify-content:center;
+
+
+    }
+
+    .add-date-btn {
+
+
+        width:100%;
+
+
+        justify-content:center;
+
+
+    }
+
+}
