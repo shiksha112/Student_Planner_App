@@ -227,7 +227,8 @@ p {
 
 .add-task-section {
 
-    margin:25px 0;
+    margin-top: 25px;
+    margin-bottom: 35px;
 
 }
 
@@ -263,14 +264,23 @@ p {
 
 
     transition:0.3s ease;
+    /* margin-bottom: 30px; */
 
 }
 
 .add-task-btn:hover {
 
-    transform:translateY(-4px);
+    transform: translateY(-5px);
 
-    background:var(--secondary);
+    background: var(--secondary);
+
+    box-shadow: 
+    0 10px 20px rgba(123,97,255,0.25);
+
+}
+.add-task-btn:active {
+
+    transform:translateY(1px) scale(0.98);
 
 }
 
@@ -290,7 +300,9 @@ p {
 
     flex-direction:column;
 
-    gap:15px;
+    gap:20px;
+
+    
 
 }
 
@@ -313,12 +325,15 @@ p {
 
 
     transition:0.3s ease;
-
+    animation: cardAppear 0.3s ease;
 }
 
 .task-card:hover {
 
-    transform:translateY(-3px);
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 15px 30px rgba(36,59,83,0.12);
 
 }
 
@@ -398,7 +413,7 @@ p {
 
     height:100%;
 
-    width:40%;
+    width:0%;
 
     background:linear-gradient(
         90deg,
@@ -407,7 +422,7 @@ p {
     );
 
     border-radius:20px;
-
+    animation: progressAnimation 1.2s ease;
 }
 
 .progress-text {
@@ -417,5 +432,374 @@ p {
     text-align:right;
 
     font-weight:600;
+
+}
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+
+/* Tablet */
+
+@media (max-width: 768px) {
+
+
+    body {
+
+        padding:20px;
+
+    }
+
+
+    .daily-container {
+
+        max-width:100%;
+
+    }
+
+
+    .daily-header {
+
+        padding:25px;
+
+    }
+
+
+    .daily-header h1 {
+
+        font-size:1.8rem;
+
+    }
+
+
+    .growth-header {
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:8px;
+
+    }
+
+}
+
+
+/* Mobile */
+
+@media (max-width:480px) {
+
+
+    body {
+
+        padding:15px;
+
+    }
+
+    .daily-header {
+
+        padding:20px;
+
+        border-radius:18px;
+
+    }
+
+    .daily-header h1 {
+
+        font-size:1.5rem;
+
+    }
+
+    .greeting {
+
+        font-size:0.95rem;
+
+    }
+
+    .motivation-card {
+
+        padding:15px;
+
+    }
+
+    .motivation-card p {
+
+        font-size:0.85rem;
+
+    }
+
+    .add-task-btn {
+
+        padding:13px;
+
+        font-size:0.9rem;
+
+    }
+
+    .task-card {
+
+        padding:15px;
+
+    }
+
+    .task-details h3 {
+
+        font-size:0.95rem;
+
+    }
+
+    .growth-section {
+
+        padding:15px;
+
+    }
+
+    .growth-header h2 {
+
+        font-size:1rem;
+
+    }
+
+
+}
+
+/* =========================
+   PAGE ANIMATION
+========================= */
+
+.daily-container {
+
+    animation: fadeUp 0.6s ease;
+
+}
+
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+
+    to {
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+.task-card input:checked + .task-details h3 {
+
+    text-decoration:line-through;
+
+    color:#94A3B8;
+
+}
+
+
+.task-card input {
+
+    cursor:pointer;
+
+    transition:0.3s ease;
+
+}
+
+
+.task-card input:checked {
+
+    transform:scale(1.2);
+
+}
+
+/* PROGRESS ANIMATION */
+
+@keyframes progressAnimation {
+
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 40%;
+    }
+
+}
+
+@keyframes cardAppear {
+
+    from {
+
+        opacity:0;
+
+        transform:translateY(10px);
+
+    }
+
+    to {
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =========================
+   ADD TASK MODAL
+========================= */
+
+.modal-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(35, 57, 91, 0.45);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    visibility: hidden;
+
+    opacity: 0;
+
+    transition: 0.3s ease;
+
+}
+
+.modal-overlay.active {
+
+    visibility: visible;
+
+    opacity: 1;
+
+}
+
+.modal {
+
+    width: min(420px, 90%);
+
+    background: var(--card);
+
+    border-radius: 24px;
+
+    padding: 30px;
+
+    box-shadow: 0 20px 40px rgba(35,57,91,0.18);
+
+    animation: fadeUp 0.3s ease;
+
+}
+
+.modal h2 {
+
+    margin-bottom: 24px;
+
+    color: var(--text);
+
+}
+
+.input-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    margin-bottom: 18px;
+
+}
+
+.input-group label {
+
+    margin-bottom: 8px;
+
+    font-weight: 600;
+
+}
+.input-group input {
+
+    padding: 14px;
+
+    border: 2px solid #E2E8F0;
+
+    border-radius: 14px;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+
+}
+.input-group input:focus {
+
+    outline: none;
+
+    border-color: var(--primary);
+
+}
+
+.modal-buttons {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 15px;
+
+    margin-top: 10px;
+
+}
+.cancel-btn,
+.save-btn {
+
+    padding: 12px 22px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+.cancel-btn {
+
+    background: #E2E8F0;
+
+    color: var(--text);
+
+}
+
+.save-btn {
+
+    background: var(--primary);
+
+    color: white;
+
+}
+
+.save-btn:hover {
+
+    transform: translateY(-2px);
+
+}
+
+.cancel-btn:hover {
+
+    background: #CBD5E1;
 
 }
